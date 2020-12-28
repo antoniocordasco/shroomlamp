@@ -104,7 +104,7 @@ void setupWatchDogTimer() {
    *  1    0    0    0    |  512K cycles  | 4.0 s
    *  1    0    0    1    | 1024K cycles  | 8.0 s
   */
-  WDTCSR  = (0<<WDP3) | (1<<WDP2) | (1<<WDP1) | (1<<WDP0);
+  WDTCSR  = (1<<WDP3) | (0<<WDP2) | (0<<WDP1) | (1<<WDP0);
   // Enable the WD interrupt (note: no reset).
   WDTCSR |= _BV(WDIE);
 }
