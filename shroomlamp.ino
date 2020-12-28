@@ -325,22 +325,6 @@ void loop() {
     
     // Re-enter sleep mode.
     enterSleep();
-    return;
-    
-
-    WDTCSR = (24);
-    WDTCSR = (33);    
-    WDTCSR |= (1<<6);
-
-    ADCSRA &= ~(1 << 7);
-
-    SMCR |= (1 << 2);
-    SMCR |= 1;    
-
-    MCUCR |= (3 << 5);
-    MCUCR = (MCUCR & ~(1 << 5)) | (1 << 6);
-
-    __asm__ __volatile__("sleep");    
   } else {
     changeDominantColour();
     changeLed("left");
